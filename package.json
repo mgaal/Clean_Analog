@@ -1,0 +1,55 @@
+{
+  "fitbit": {
+    "appUUID": "aa747162-5348-47d0-ad97-a00e32100144",
+    "appType": "clockface",
+    "appDisplayName": "Clean_Analog",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#8bc34a",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini",
+      "mira"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Clean_Analog"
+      },
+      "de": {
+        "name": "Clean_Analog"
+      },
+      "es": {
+        "name": "Clean_Analog"
+      },
+      "fr": {
+        "name": "Clean_Analog"
+      },
+      "it": {
+        "name": "Clean_Analog"
+      },
+      "ja": {
+        "name": "Clean_Analog"
+      },
+      "ko": {
+        "name": "Clean_Analog"
+      },
+      "nl": {
+        "name": "Clean_Analog"
+      },
+      "sv": {
+        "name": "Clean_Analog"
+      },
+      "zh-cn": {
+        "name": "Clean_Analog"
+      },
+      "zh-tw": {
+        "name": "Clean_Analog"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0"
+  }
+}
