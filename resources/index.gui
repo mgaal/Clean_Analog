@@ -1,12 +1,18 @@
-<svg>
-  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-4" y="-110" width="8" height="110" fill="#ffffff" />
-  </g>
-  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-6" y="-75" width="7" height="75" fill="#ffffff" />
-  </g>
-  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-2" y="-120" width="4" height="120" fill="#ffffff" />
-  </g>
-  <circle cx="50%" cy="50%" r="10" fill="#ffffff" />
+<svg id="watch" x="0" y="0" width="100%" height="100%" fill="black" pointer-events="visible">
+  <rect x="0" y="0" width="100%" height="100%">
+    <circle cx="50%" cy="45%" r="10" fill="#ffffff" />
+    <g id="secs" pointer-events="visible" transform="translate(50%,45%)">
+      <rect x="$-2" y="-120" width="4" height="120" fill="#ffffff" />
+    </g>
+    <g id="mins" pointer-events="visible" transform="translate(50%,45%)">
+      <rect x="$-3" y="-110" width="6" height="110" fill="#ffffff" />
+    </g>
+    <g id="hours" pointer-events="visible" transform="translate(50%,45%)">
+      <rect x="$-4" y="-75" width="8" height="75" fill="#ffffff" />
+    </g>
+    <svg id="sensorSvg">
+      <image id="sensorIcon" />
+      <text id="sensorLabel" />
+    </svg>
+  </rect>
 </svg>

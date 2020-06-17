@@ -1,11 +1,14 @@
 {
   "fitbit": {
-    "appUUID": "aa747162-5348-47d0-ad97-a00e32100144",
+    "appUUID": "f5501447-6977-4088-b045-ce34f945914a",
     "appType": "clockface",
-    "appDisplayName": "Clean_Analog",
+    "appDisplayName": "Clean Analog",
     "iconFile": "resources/icon.png",
-    "wipeColor": "#8bc34a",
-    "requestedPermissions": [],
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_activity"
+    ],
     "buildTargets": [
       "higgs",
       "meson",
@@ -14,37 +17,37 @@
     ],
     "i18n": {
       "en": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "de": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "es": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "fr": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "it": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "ja": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "ko": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "nl": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "sv": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "zh-cn": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       },
       "zh-tw": {
-        "name": "Clean_Analog"
+        "name": "Clean Analog"
       }
     },
     "defaultLanguage": "en-US"

@@ -1,0 +1,22 @@
+#sensorSvg {
+  x: 25%;
+  y: 87%;
+  height: 32;
+  width: 50%;
+}
+
+#sensorIcon {
+  x: 0;
+  y: 0;
+  height: 32;
+  width: 32;
+}
+
+#sensorLabel {
+  text-anchor: end;
+  text-length: 32;
+  font-size: 32;
+  x: 100%;
+  y: 90%;
+  fill: #ffffff;
+}

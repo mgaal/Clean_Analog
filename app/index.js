@@ -1,5 +1,9 @@
 import clock from "clock";
 import document from "document";
+import HeartRateSensor from "heart-rate";
+import display from "display";
+import { me as appbit } from "appbit";
+import { today } from "user-activity";
 
 // Update the clock every second
 clock.granularity = "seconds";
@@ -39,3 +43,68 @@ function updateClock() {
 
 // Update the clock every tick event
 clock.ontick = () => updateClock();
+
+let watch = document.getElementById("watch");
+let sensorLabel = document.getElementById("sensorLabel");
+let sensorIcon = document.getElementById("sensorIcon");
+let toggle = 0;
+
+watch.onmousedown = function(e) {
+  toggle = (toggle + 1) % 4;
+  if (toggle == 1) {
+    displayHeartRate();
+  } else if (toggle == 2) {
+    displaySteps();
+  } else if (toggle == 3) {
+    displayCalories();
+  } else {
+    displayNothing();
+  }
+}
+
+// Displays the heart rate
+function displayHeartRate() {
+  if (HeartRateSensor) {
+      const hrs = new HeartRateSensor();
+      sensorLabel.text = "";
+      hrs.addEventListener("reading", () => {
+        if (toggle == 1) {
+          sensorLabel.text = hrs.heartRate;
+          sensorIcon.style.fill = "hotpink";
+          sensorIcon.href = "icons/heartIcon.png";
+        }
+      });
+      display.addEventListener("change", () => {
+        // Automatically stop the sensor when the screen is off to conserve battery
+        display.on ? hrs.start() : hrs.stop();
+      });
+      hrs.start();
+    }
+}
+
+// Displays the stepcount 
+function displaySteps() {
+  let steps = today.adjusted.steps.toLocaleString().replace(",", ".");
+  if (appbit.permissions.granted("access_activity")) {
+    sensorLabel.text = "";
+    sensorLabel.text = steps;
+    sensorIcon.style.fill = "lightskyblue";
+    sensorIcon.href = "icons/stepsIcon.png";
+  }
+}
+
+// Displays the calories
+function displayCalories() {
+  let calories = today.adjusted.calories.toLocaleString().replace(",", ".");
+  if (appbit.permissions.granted("access_activity")) {
+    sensorLabel.text = "";
+    sensorLabel.text = calories;
+    sensorIcon.style.fill = "sandybrown";
+    sensorIcon.href = "icons/calsIcon.png";
+  }
+}
+
+function displayNothing() {
+  sensorLabel.text = "";
+  sensorIcon.href = "";
+}
