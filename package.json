@@ -1,10 +1,10 @@
 {
   "fitbit": {
-    "appUUID": "f5501447-6977-4088-b045-ce34f945914a",
+    "appUUID": "aa747162-5348-47d0-ad97-a00e32100144",
     "appType": "clockface",
     "appDisplayName": "Clean Analog",
     "iconFile": "resources/icon.png",
-    "wipeColor": "#607d8b",
+    "wipeColor": "#8bc34a",
     "requestedPermissions": [
       "access_heart_rate",
       "access_activity"

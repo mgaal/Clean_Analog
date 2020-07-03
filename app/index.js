@@ -64,29 +64,31 @@ watch.onmousedown = function(e) {
 
 // Displays the heart rate
 function displayHeartRate() {
+  sensorLabel.text = "-";
+  sensorIcon.style.fill = "hotpink";
+  sensorIcon.href = "icons/heartIcon.png";
+  
   if (HeartRateSensor) {
-      const hrs = new HeartRateSensor();
-      sensorLabel.text = "";
-      hrs.addEventListener("reading", () => {
-        if (toggle == 1) {
-          sensorLabel.text = hrs.heartRate;
-          sensorIcon.style.fill = "hotpink";
-          sensorIcon.href = "icons/heartIcon.png";
-        }
-      });
-      display.addEventListener("change", () => {
-        // Automatically stop the sensor when the screen is off to conserve battery
-        display.on ? hrs.start() : hrs.stop();
-      });
-      hrs.start();
-    }
+    const hrs = new HeartRateSensor();
+    hrs.addEventListener("reading", () => {
+      if (toggle == 1) {
+        sensorLabel.text = hrs.heartRate;
+        sensorIcon.style.fill = "hotpink";
+        sensorIcon.href = "icons/heartIcon.png";
+      }
+    });
+    display.addEventListener("change", () => {
+      // Automatically stop the sensor when the screen is off to conserve battery
+      display.on ? hrs.start() : hrs.stop();
+    });
+    hrs.start();
+  }
 }
 
 // Displays the stepcount 
 function displaySteps() {
   let steps = today.adjusted.steps.toLocaleString().replace(",", ".");
   if (appbit.permissions.granted("access_activity")) {
-    sensorLabel.text = "";
     sensorLabel.text = steps;
     sensorIcon.style.fill = "lightskyblue";
     sensorIcon.href = "icons/stepsIcon.png";
@@ -97,7 +99,6 @@ function displaySteps() {
 function displayCalories() {
   let calories = today.adjusted.calories.toLocaleString().replace(",", ".");
   if (appbit.permissions.granted("access_activity")) {
-    sensorLabel.text = "";
     sensorLabel.text = calories;
     sensorIcon.style.fill = "sandybrown";
     sensorIcon.href = "icons/calsIcon.png";
